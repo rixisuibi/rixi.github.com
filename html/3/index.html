@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        ul{
+            width: 200px;
+            float: left;
+            border:1px solid #666666;
+            margin:0 20px;
+        }
+    </style>
+    <script src="jquery-1.7.2.js"></script>
+    <script>
+       $(function () {
+           function rnd(n,m) {
+               return parseInt(Math.random()*(m-n)+n)
+           }
+
+           function createLi20() {
+               for(var i = 0;i<20;i++){
+                   var aUl = $('ul');
+                   aUl.sort(function (a,b) {
+                       return $(a).height()-$(b).height()
+                   });
+
+                   $('<li></li>').css({
+                       'height':rnd(100,300),
+                       'background':'rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')'
+                   }).appendTo(aUl[0])
+               }
+           }
+           createLi20();
+           $(window).scroll(function () {
+               var H = $(window).width()+$(document).scrollTop();
+               var cH = $(document).height();
+               if(cH-300<=H){
+                   createLi20();
+               }
+           });
+
+       })
+    </script>
+</head>
+<body>
+<ul></ul>
+<ul></ul>
+<ul></ul>
+<ul></ul>
+<ul></ul>
+</body>
+</html>

@@ -1249,9 +1249,6 @@ ul.social-icons3{
 .gallery_gds{
 	margin-top:60px;
 }
-.gallery {
-    padding:6em 0;
-}
 .item {
 	text-align:center;
 	position:relative;			
@@ -1483,7 +1480,7 @@ ul.social-icons.two {
 }
 /*-- footer --*/
 .footer {
-    background: #212322;
+    background:yellowgreen;
     padding: 6em 0 5em 0;
 }
 .footer_top ul li{
